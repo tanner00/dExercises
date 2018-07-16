@@ -1,9 +1,12 @@
 {
-	"name": "dgrep",
-	"authors": [
-		"tanner"
+    "name": "dgrep",
+    "authors": [
+	    "tanner"
 	],
-	"description": "A (minimal) grep written in D!",
-	"copyright": "Copyright © 2018, tanner",
-	"license": "MIT"
+    "description": "A (minimal) grep written in D!",
+    "copyright": "Copyright © 2018, tanner",
+    "license": "MIT",
+    "dependencies": {
+	"colorize": "~>1.0.5"
+    }
 }
