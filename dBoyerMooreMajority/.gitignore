@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+dboyermooremajority.so
+dboyermooremajority.dylib
+dboyermooremajority.dll
+dboyermooremajority.a
+dboyermooremajority.lib
+dboyermooremajority-test-*
+*.exe
+*.o
+*.obj
+*.lst

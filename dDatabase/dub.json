@@ -1,0 +1,9 @@
+{
+	"name": "ddatabase",
+	"authors": [
+		"tanner"
+	],
+	"description": "Simple, trivial database",
+	"copyright": "Copyright © 2018, tanner",
+	"license": "MIT"
+}

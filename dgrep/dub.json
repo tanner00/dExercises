@@ -1,0 +1,9 @@
+{
+	"name": "dgrep",
+	"authors": [
+		"tanner"
+	],
+	"description": "A (minimal) grep written in D!",
+	"copyright": "Copyright © 2018, tanner",
+	"license": "MIT"
+}

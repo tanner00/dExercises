@@ -1,0 +1,9 @@
+{
+	"name": "dboyermooremajority",
+	"authors": [
+		"tanner"
+	],
+	"description": "Boyer-Moore majority vote algorithm in D!",
+	"copyright": "Copyright © 2018, tanner",
+	"license": "MIT"
+}

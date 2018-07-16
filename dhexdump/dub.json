@@ -1,0 +1,9 @@
+{
+	"name": "dhexdump",
+	"authors": [
+		"tanner"
+	],
+	"description": "Hexdump with D!",
+	"copyright": "Copyright © 2018, tanner",
+	"license": "MIT"
+}
