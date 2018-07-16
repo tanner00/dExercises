@@ -1,9 +1,0 @@
-{
-	"name": "drpn",
-	"authors": [
-		"tanner"
-	],
-	"description": "A reverse polish notation calculator in D!",
-	"copyright": "Copyright © 2018, tanner",
-	"license": "MIT"
-}

@@ -1,5 +1,5 @@
+import std.algorithm.iteration;
 import std.stdio;
-import std.algorithm.iteration : map;
 
 // Tested on some ELF files in anu/build
 
