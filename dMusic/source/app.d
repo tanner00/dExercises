@@ -60,10 +60,10 @@ void main(string[] args)
     DerelictSFML2System.load();
     DerelictSFML2Audio.load();
 
-	// @note: SFML purportedly supports ogg, wav (only PCM), and flac files
-	// @note: I have only tested a few types of each
-    auto musicDir = dirEntries(args[1], "*.{ogg,wav,flac}", SpanMode.shallow).filter!(isFile)
-        .array;
+    // @note: SFML purportedly supports ogg, wav (only PCM), and flac files
+    // @note: I have only tested a few types of each
+    auto musicDir = dirEntries(args[1], "*.{ogg,wav,flac}", SpanMode.shallow)
+        .filter!(isFile).array;
 
     auto song = getSong(musicDir);
     sfMusic* currentSong = song.music;
