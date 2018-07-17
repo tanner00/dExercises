@@ -1,0 +1,13 @@
+{
+	"name": "dmusic",
+	"authors": [
+		"tanner"
+	],
+	"dependencies": {
+		"derelict-sfml2": "~>3.0.2",
+		"termbox": "~>0.0.5"
+	},
+	"description": "A command line music player in D!",
+	"copyright": "Copyright © 2018, tanner",
+	"license": "MIT"
+}

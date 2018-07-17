@@ -1,0 +1,8 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"derelict-sfml2": "3.0.2",
+		"derelict-util": "2.0.6",
+		"termbox": "0.0.5"
+	}
+}
