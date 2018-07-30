@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+dtextedit.so
+dtextedit.dylib
+dtextedit.dll
+dtextedit.a
+dtextedit.lib
+dtextedit-test-*
+*.exe
+*.o
+*.obj
+*.lst

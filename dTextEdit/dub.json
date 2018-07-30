@@ -1,0 +1,12 @@
+{
+	"name": "dtextedit",
+	"authors": [
+		"tanner"
+	],
+	"dependencies": {
+		"termbox": "~>0.0.5"
+	},
+	"description": "A text editor in D!",
+	"copyright": "Copyright © 2018, tanner",
+	"license": "MIT"
+}

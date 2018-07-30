@@ -1,0 +1,9 @@
+{
+	"name": "dbmp",
+	"authors": [
+		"tanner"
+	],
+	"description": "A bmp reader and writer in D",
+	"copyright": "Copyright © 2018, tanner",
+	"license": "MIT"
+}

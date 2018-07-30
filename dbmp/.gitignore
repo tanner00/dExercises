@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+dbmp.so
+dbmp.dylib
+dbmp.dll
+dbmp.a
+dbmp.lib
+dbmp-test-*
+*.exe
+*.o
+*.obj
+*.lst

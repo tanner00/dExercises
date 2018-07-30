@@ -1,9 +1,12 @@
 {
-	"name": "ddijkstra",
-	"authors": [
-		"tanner"
-	],
-	"description": "Dijkstra's pathfinding algorithm in D!",
-	"copyright": "Copyright © 2018, tanner",
-	"license": "MIT"
+    "name": "ddijkstra",
+    "authors": [
+	"tanner"
+    ],
+    "description": "Dijkstra's pathfinding algorithm in D!",
+    "copyright": "Copyright © 2018, tanner",
+    "license": "MIT",
+    "dependencies": {
+	"termbox": { "version": "*" }
+    },
 }

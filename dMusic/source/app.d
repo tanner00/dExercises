@@ -6,6 +6,7 @@ import std.range;
 import std.string;
 import std.typecons;
 
+// @todo: maybe add some "import name = name.name" qualifiers
 import derelict.sfml2.system;
 import derelict.sfml2.audio;
 import termbox;
@@ -40,13 +41,11 @@ void main(string[] args)
         auto songPath = musicDir.choice;
 
         zapLine(0);
-        writeString("Playing " ~ songPath.baseName.stripExtension, 0, 0, Color
-                .green);
+        writeString("Playing " ~ songPath.baseName.stripExtension, 0, 0, Color.green);
 
         sfMusic* newSong = sfMusic_createFromFile(songPath.toStringz);
 
-        return typeof(return)(newSong, formatTime(newSong.sfMusic_getDuration
-                .sfTime_asSeconds));
+        return typeof(return)(newSong, formatTime(newSong.sfMusic_getDuration.sfTime_asSeconds));
     }
 
     assert(args.length == 2, "Please supply a directory of music to shuffle");
@@ -62,8 +61,14 @@ void main(string[] args)
 
     // @note: SFML purportedly supports ogg, wav (only PCM), and flac files
     // @note: I have only tested a few types of each
-    auto musicDir = dirEntries(args[1], "*.{ogg,wav,flac}", SpanMode.shallow)
-        .filter!(isFile).array;
+    auto musicDir = dirEntries(args[1], "*.{ogg,wav,flac}", SpanMode.shallow).filter!(isFile)
+        .array;
+
+    writeString("In playlist:", 0, 2);
+    foreach (i, song; musicDir.sort.enumerate(3))
+    {
+        writeString(song.baseName.stripExtension, 0, i, Color.cyan);
+    }
 
     auto song = getSong(musicDir);
     sfMusic* currentSong = song.music;
@@ -86,8 +91,7 @@ void main(string[] args)
 
             sfMusic_play(currentSong);
         }
-        auto completedTime = formatTime(currentSong.sfMusic_getPlayingOffset
-                .sfTime_asSeconds);
+        auto completedTime = formatTime(currentSong.sfMusic_getPlayingOffset.sfTime_asSeconds);
 
         zapLine(1);
         writeString(completedTime ~ " / " ~ songDuration, 0, 1, Color.red);
