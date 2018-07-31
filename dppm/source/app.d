@@ -1,46 +1,36 @@
 import std.stdio;
+import std.typecons;
 
-enum MapType
+alias Pixel = Tuple!(ubyte, "r", ubyte, "g", ubyte, "b");
+
+void writePPM(string name, Pixel[][] data)
 {
-    bit,
-    gray,
-    pix,
+	import std.file;
+	import std.array : empty;
+
+	assert(!data.empty);
+
+	auto f = File(name ~ ".ppm", "w");
+
+	f.writefln("P3\n%s %s\n255", data[0].length, data.length);
+
+	f.writefln("%(%(%(%d %d %d %) %)\n%)", data);
 }
 
-void writePPM(string name, ubyte[][] data, MapType mtype)
+void main(string[] args)
 {
-    import std.file;
-    import std.conv : to;
-    import std.array : empty;
+	assert(args.length == 2);
 
-    assert(!data.empty);
+	import std.array : array;
+	import std.conv : to;
+	import std.random;
+	import std.range : generate, take;
 
-    auto f = File(name, "w");
-    f.writefln("P%s", to!int(mtype + 1));
+	// enum n = 500;
+	auto n = to!int(args[1]);
 
-    if (mtype == MapType.pix)
-        f.writefln("%s %s", data[0].length / 3, data.length / 3);
-    else
-        f.writefln("%s %s", data[0].length, data.length);
+	auto data = generate!(() => generate!(() => Pixel(uniform!ubyte, uniform!ubyte, uniform!ubyte))().take(n).array).take(n).array;
 
-    foreach (i; 0 .. data.length)
-    {
-        f.writefln("%(%s %)", data[i]);
-    }
-}
-
-void main()
-{
-
-    import std.array : array;
-    import std.random : uniform;
-    import std.range : generate, take;
-
-    enum n = 3 * 256;
-
-    ubyte[][] data = generate!(() => generate!(() => uniform!ubyte)().take(n)
-            .array).take(n).array;
-
-    writePPM("test.pgm", data, MapType.gray);
+	writePPM("test", data);
 
 }
