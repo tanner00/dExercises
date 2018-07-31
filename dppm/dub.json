@@ -1,9 +1,9 @@
 {
-	"name": "dbmp",
+	"name": "dppm",
 	"authors": [
 		"tanner"
 	],
-	"description": "A bmp reader and writer in D",
+	"description": "A ppm writer for D",
 	"copyright": "Copyright © 2018, tanner",
 	"license": "MIT"
 }
